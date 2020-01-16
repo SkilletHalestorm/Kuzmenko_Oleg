@@ -151,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Characters.h" />
+    <ClInclude Include="ConsoleColor.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="FillPlayfground.h" />
     <ClInclude Include="GameOn.h" />

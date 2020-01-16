@@ -24,32 +24,48 @@ public:
 		redGuyPositionY = position.Y;
 	}
 	int ChooseDirection()
-	{		
+	{
+		const int playerIsOnSecondQuarter = 1;
+		const int playerIsOnFirstQuarter = 2;
+		const int playerIsOnFourthQuarter = 3;
+		const int playerIsOnThirdQuarter = 4;
+		const int playerIsUnderneath = 5;
+		const int playerIsAbove = 6;
+		const int playerIsRHside = 7;
+		const int playerIsLHside = 8;
 		int choice = 0;
 		if(destinationX > redGuyPositionX && destinationY > redGuyPositionY)
-			choice = 1;
+			choice = playerIsOnSecondQuarter;
 		if (destinationX > redGuyPositionX && destinationY < redGuyPositionY)
-			choice = 2;
+			choice = playerIsOnFirstQuarter;
 		if (destinationX < redGuyPositionX && destinationY < redGuyPositionY)
-			choice = 3;
+			choice = playerIsOnFourthQuarter;
 		if (destinationX < redGuyPositionX && destinationY > redGuyPositionY)
-			choice = 4;
+			choice = playerIsOnThirdQuarter;
 		if (destinationX == redGuyPositionX && destinationY > redGuyPositionY)
-			choice = 5;
+			choice = playerIsUnderneath;
 		if (destinationX == redGuyPositionX && destinationY < redGuyPositionY)
-			choice = 6;
+			choice = playerIsAbove;
 		if (destinationX > redGuyPositionX && destinationY == redGuyPositionY)
-			choice = 7;
+			choice = playerIsRHside; // right hand side
 		if (destinationX < redGuyPositionX && destinationY == redGuyPositionY)
-			choice = 8;
+			choice = playerIsLHside; // left hand side
 		return choice;
 	}
 	void Chase()
 	{
+		const int playerIsOnSecondQuarter = 1;
+		const int playerIsOnFirstQuarter = 2;
+		const int playerIsOnFourthQuarter = 3;
+		const int playerIsOnThirdQuarter = 4;
+		const int playerIsUnderneath = 5;
+		const int playerIsAbove = 6;
+		const int playerIsRHside = 7;
+		const int playerIsLHside = 8;
 		int direction = ChooseDirection();
 		switch (direction)
 		{
-		case(1):
+		case(playerIsOnSecondQuarter):
 			{
 			if (PlayGround[redGuyPositionX + 1][redGuyPositionY] == '\0')
 				MoveRight();
@@ -57,7 +73,7 @@ public:
 			AroundWayRight();
 			break;
 			}
-		case(2):
+		case(playerIsOnFirstQuarter):
 		{
 			if (PlayGround[redGuyPositionX + 1][redGuyPositionY] == '\0')
 				MoveRight();
@@ -65,7 +81,7 @@ public:
 			AroundWayRight();
 			break;
 		}
-		case(3):
+		case(playerIsOnFourthQuarter):
 		{
 			if (PlayGround[redGuyPositionX - 1][redGuyPositionY] == '\0')
 				MoveLeft();
@@ -73,7 +89,7 @@ public:
 			AroundWayLeft();
 			break;
 		}
-		case(4):
+		case(playerIsOnThirdQuarter):
 		{
 			if (PlayGround[redGuyPositionX - 1][redGuyPositionY] == '\0')
 				MoveLeft();
@@ -81,7 +97,7 @@ public:
 				AroundWayLeft();
 			break;
 		}
-		case(5):
+		case(playerIsUnderneath):
 		{
 			if (PlayGround[redGuyPositionX][redGuyPositionY + 1] == '\0')
 				MoveDown();
@@ -89,7 +105,7 @@ public:
 				AroundWayDown();
 			break;
 		}
-		case(6):
+		case(playerIsAbove):
 		{
 			if (PlayGround[redGuyPositionX][redGuyPositionY - 1] == '\0')
 				MoveUp();
@@ -97,7 +113,7 @@ public:
 				AroundWayUp();
 			break;
 		}
-		case(7):
+		case(playerIsRHside):
 		{
 			if (PlayGround[redGuyPositionX + 1][redGuyPositionY] == '\0')
 				MoveRight();
@@ -105,7 +121,7 @@ public:
 				AroundWayRight();
 			break;
 		}
-		case(8):
+		case(playerIsLHside):
 		{
 			if (PlayGround[redGuyPositionX - 1][redGuyPositionY] == '\0')
 				MoveLeft();
