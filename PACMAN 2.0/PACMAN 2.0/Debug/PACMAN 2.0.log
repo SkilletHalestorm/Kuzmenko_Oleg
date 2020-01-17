@@ -2,7 +2,8 @@
   Field.cpp
   GameLoop.cpp
   Main.cpp
-  Menu.cpp
   Player.cpp
   Generating Code...
-  PACMAN 2.0.vcxproj -> E:\Downloads\2\bear\C++\PAC\PACMAN 2.0\Debug\PACMAN 2.0.exe
+Draw.obj : error LNK2001: unresolved external symbol "public: static char (* Draw::PlayGround)[50]" (?PlayGround@Draw@@2PAY0DC@DA)
+Player.obj : error LNK2001: unresolved external symbol "public: static char (* Draw::PlayGround)[50]" (?PlayGround@Draw@@2PAY0DC@DA)
+E:\Downloads\2\bear\C++\PAC\PACMAN 2.0\Debug\PACMAN 2.0.exe : fatal error LNK1120: 1 unresolved externals

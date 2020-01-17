@@ -4,7 +4,7 @@
 
 void Player::MoveRight()
 {
-	if (draw.PlayGround[(playerPositionX + shift)][playerPositionY] == '\0')
+	if (Draw::PlayGround[(playerPositionX + shift)][playerPositionY] == '\0')
 	{
 		RemoveSymbol('\0', playerPositionX, playerPositionY);
 		playerPositionX += shift;
@@ -15,7 +15,7 @@ void Player::MoveRight()
 }
 void Player::MoveLeft()
 {
-	if (draw.PlayGround[(playerPositionX - shift)][playerPositionY] == '\0')
+	if (Draw::PlayGround[(playerPositionX - shift)][playerPositionY] == '\0')
 	{
 		RemoveSymbol('\0', playerPositionX, playerPositionY);
 		playerPositionX -= shift;
@@ -26,7 +26,7 @@ void Player::MoveLeft()
 }
 void Player::MoveUp()
 {
-	if (draw.PlayGround[playerPositionX][playerPositionY - shift] == '\0')
+	if (Draw::PlayGround[playerPositionX][playerPositionY - shift] == '\0')
 	{
 		RemoveSymbol('\0', playerPositionX, playerPositionY);
 		playerPositionY -= shift;
@@ -37,7 +37,7 @@ void Player::MoveUp()
 }
 void Player::MoveDown()
 {
-	if (draw.PlayGround[playerPositionX][playerPositionY + shift] == '\0')
+	if (Draw::PlayGround[playerPositionX][playerPositionY + shift] == '\0')
 	{
 		RemoveSymbol('\0', playerPositionX, playerPositionY);
 		playerPositionY += shift;

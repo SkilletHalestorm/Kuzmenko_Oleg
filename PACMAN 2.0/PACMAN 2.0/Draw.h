@@ -7,7 +7,8 @@
 class Draw : protected GameLoop
 {
 public:
-	char PlayGround[50][50];
+	Draw();
+static	char PlayGround[50][50];
 	COORD position;
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	void Fill(int x, int y);
